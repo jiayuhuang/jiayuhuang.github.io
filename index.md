@@ -1,0 +1,61 @@
+---
+title       : Medicaid Inpatient Disease Rate Distribution for Pediatric Hospital Discharges by Zip Code 
+subtitle    : for year 2011 - 2012
+author      : Jiayu Huang
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [bootstrap, quiz, shiny, interactive]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+
+--- 
+
+## Goal? What for?
+
+Present the observed rate (per 100,000 people) for medicaid inpatient discharges of 7 Pediatrics disease types from 2011 to 2012 in New York state
+
+
+---
+
+## What you can do ?
+
+  * select an input year from 2011 - 2012  
+  
+  * select a type of disease (7 in total) 
+  
+  * select area in NY state by zipcode 
+  
+
+---
+
+## What I can offer?
+
+1. Given a zip code, show the city and the county the zip code is in.
+
+2. Given a year in 2011-2012 and a type of disease, show the geographical distribution of observed disease rate in NY and the Medicaid population of different zipcodes. 
+
+3. Given a type of disease and a zipcode in NY state, show the barplot of (average) observed disease rates of the zipcode area,  the county which the zipcode is in and the whole state in 2011-2012.
+
+4. Given a type of disease and a zipcode in NY state, show the boxplot of state-wide average observed disease rates.
+
+
+
+---
+
+## An example 
+
+
+```r
+ad <- subset(cleaned_dat, disease == "Asthma" )
+boxplot(ad$obs_rate~ad$year,horizontal = TRUE, xlab = "Observed rate", 
+        main = "State-wide Observed rate for Asthma by Year")  
+```
+
+<img src="assets/fig/unnamed-chunk-2.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" />
+---
+
+
+
+
+
